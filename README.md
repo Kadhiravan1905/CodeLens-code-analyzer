@@ -1,9 +1,8 @@
 # CodeLens
 
 <p align="center">
-  <img src="image/banner.png" alt="CodeLens - Code Analyzer" width="100%">
+  <img src="images/Banner.png" alt="CodeLens Banner" width="100%">
 </p>
-
 
 ### Lightweight JavaScript & Python Code Analyzer — Chrome Extension
 
@@ -37,9 +36,9 @@ CodeLens is a lightweight Chrome extension that analyzes **JavaScript and Python
 * 🗑️ Delete individual capsules or clear all saved data
 * 💻 Works locally using browser storage
 
-* <h3>🖥️ CodeLens Interface</h3>
+<h3>🖥️ Front Interface</h3>
 <p align="center">
-  <img src="image/interface.png" alt="CodeLens Interface" width="90%">
+  <img src="images/Front.png" alt="CodeLens Front Interface" width="90%">
 </p>
 
 
@@ -90,6 +89,12 @@ javascript/
 6. Use **Why?**, **Simplify**, or **Possible Issues** for additional analysis.
 7. Save useful results as **Code Capsules**.
 
+<h3>🔍 Code Analysis Interface</h3>
+<p align="center">
+  <img src="images/interface.png" alt="CodeLens Analysis Interface" width="90%">
+</p>
+
+
 ## 📚 Saved Capsules
 
 CodeLens provides a dedicated **Saved Capsules** page where analysis results can be stored locally.
@@ -107,10 +112,10 @@ Saved capsules include:
 * Explanation
 * Source information
 * Saved date
-
+* 
 <h3>💾 Saved Capsules</h3>
 <p align="center">
-  <img src="image/saved-capsule.png" alt="Saved Capsules" width="90%">
+  <img src="images/Saved%20Capsule.png" alt="CodeLens Saved Capsules" width="90%">
 </p>
 
 You can search, filter, copy, delete, export, import, or generate a PDF from saved capsules.
@@ -163,11 +168,12 @@ CodeLens can be useful for:
 * Preparing for programming examinations
 * Saving and revising code-analysis results
 * Learning common programming patterns
-
-* <h3>🧪 Example Problem</h3>
+* 
+<h3>🧪 Example Problem</h3>
 <p align="center">
-  <img src="image/example-problem.png" alt="CodeLens Example Problem" width="90%">
+  <img src="images/Example%20Problem.png" alt="CodeLens Example Problem" width="90%">
 </p>
+
 
 ## 📌 Limitations
 
