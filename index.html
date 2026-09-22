@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CodeLens - A lightweight JavaScript and Python code analyzer Chrome extension.">
+  <title>CodeLens | Code Analyzer</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: #050817;
+      color: #f5f7ff;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, 92%); margin: auto; }
+
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(5, 8, 23, .88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #18224a;
+    }
+    .nav-inner {
+      min-height: 70px; display: flex; align-items: center;
+      justify-content: space-between; gap: 20px;
+    }
+    .logo { font-size: 1.35rem; font-weight: 800; }
+    .logo span { color: #4d62ff; }
+    .nav-links { display: flex; gap: 22px; color: #b9c2df; font-size: .95rem; }
+    .nav-links a:hover { color: #fff; }
+
+    .hero { padding: 75px 0 55px; text-align: center; }
+    .hero img { width: 100%; max-width: 1100px; border-radius: 18px; box-shadow: 0 20px 70px rgba(49, 83, 255, .18); }
+    .hero h1 { font-size: clamp(2.2rem, 6vw, 4.4rem); margin: 35px 0 12px; }
+    .gradient { background: linear-gradient(90deg, #fff, #6170ff); -webkit-background-clip: text; color: transparent; }
+    .hero p { max-width: 760px; margin: auto; color: #aeb8d8; font-size: 1.1rem; }
+    .buttons { margin-top: 28px; display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+    .btn {
+      display: inline-block; padding: 12px 22px; border-radius: 9px;
+      background: #2864f0; border: 1px solid #3d76ff; font-weight: 700;
+      transition: .2s;
+    }
+    .btn:hover { transform: translateY(-2px); background: #3974ff; }
+    .btn.secondary { background: transparent; border-color: #33416e; color: #dbe2ff; }
+
+    section { padding: 75px 0; }
+    .section-title { text-align: center; margin-bottom: 38px; }
+    .section-title h2 { font-size: 2rem; }
+    .section-title p { color: #8994b8; margin-top: 7px; }
+
+    .features {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: #0b1028; border: 1px solid #1b2855;
+      border-radius: 14px; padding: 24px;
+    }
+    .card .icon { font-size: 1.7rem; margin-bottom: 10px; }
+    .card h3 { margin-bottom: 7px; }
+    .card p { color: #9ba6c8; font-size: .94rem; }
+
+    .tech {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+    }
+    .tag {
+      padding: 8px 14px; border-radius: 999px;
+      background: #0c1430; border: 1px solid #263768; color: #cbd4f3;
+    }
+
+    .shots { display: grid; gap: 28px; }
+    .shot {
+      background: #0b1028; border: 1px solid #1b2855;
+      border-radius: 16px; padding: 14px;
+    }
+    .shot h3 { padding: 8px 8px 14px; }
+    .shot img { display: block; width: 100%; border-radius: 10px; }
+
+    .how {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px; counter-reset: step;
+    }
+    .step { position: relative; padding: 25px; }
+    .step::before {
+      counter-increment: step; content: counter(step);
+      display: inline-grid; place-items: center;
+      width: 38px; height: 38px; border-radius: 50%;
+      background: #2864f0; font-weight: 800; margin-bottom: 14px;
+    }
+    .step p { color: #9ba6c8; }
+
+    .privacy {
+      text-align: center; background: #0a1026;
+      border: 1px solid #1b2855; border-radius: 18px; padding: 35px;
+    }
+    .privacy p { max-width: 760px; margin: 10px auto 0; color: #a7b1d0; }
+
+    footer {
+      border-top: 1px solid #18224a; padding: 30px 0;
+      color: #7f8bad; text-align: center; font-size: .9rem;
+    }
+
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .hero { padding-top: 40px; }
+      section { padding: 55px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#">Code<span>Lens</span></a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how">How It Works</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#tech">Technology</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <img src="images/Banner.png" alt="CodeLens - Code Analyzer">
+    <h1>Understand Code. <span class="gradient">Analyze Patterns.</span><br>Learn Complexity.</h1>
+    <p>
+      A lightweight Chrome extension for analyzing JavaScript and Python code
+      through local analysis, with complexity estimation, pattern detection,
+      explanations, and saved analysis capsules.
+    </p>
+    <div class="buttons">
+      <a class="btn" href="https://github.com/Kadhiravan1905/CodeLens-code-analyzer" target="_blank">View on GitHub</a>
+      <a class="btn secondary" href="#screenshots">Explore Screenshots</a>
+    </div>
+  </div>
+</header>
+
+<section id="features">
+  <div class="container">
+    <div class="section-title">
+      <h2>✨ Features</h2>
+      <p>Everything CodeLens provides in one lightweight extension.</p>
+    </div>
+    <div class="features">
+      <div class="card"><div class="icon">🔍</div><h3>Code Analysis</h3><p>Analyze JavaScript and Python source code locally.</p></div>
+      <div class="card"><div class="icon">📊</div><h3>Complexity Estimation</h3><p>Estimate time and space complexity from detected code structures.</p></div>
+      <div class="card"><div class="icon">🔄</div><h3>Loop & Recursion Detection</h3><p>Identify loops, nested loops, and recursion patterns.</p></div>
+      <div class="card"><div class="icon">🧩</div><h3>Pattern Detection</h3><p>Recognize common code patterns and structures.</p></div>
+      <div class="card"><div class="icon">💡</div><h3>Simple Explanations</h3><p>Understand why a particular complexity or pattern was detected.</p></div>
+      <div class="card"><div class="icon">💾</div><h3>Saved Capsules</h3><p>Save analysis results locally and search them later.</p></div>
+      <div class="card"><div class="icon">📝</div><h3>Exam Mode</h3><p>Review saved analysis results in a focused exam-friendly view.</p></div>
+      <div class="card"><div class="icon">🔒</div><h3>Local-First</h3><p>Designed for local analysis without an external analysis API.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="container">
+    <div class="section-title">
+      <h2>⚙️ How It Works</h2>
+      <p>A simple workflow from code to useful insights.</p>
+    </div>
+    <div class="how">
+      <div class="card step"><h3>Choose Language</h3><p>Select JavaScript or Python in the CodeLens interface.</p></div>
+      <div class="card step"><h3>Enter Code</h3><p>Paste the code you want to understand and analyze.</p></div>
+      <div class="card step"><h3>Analyze</h3><p>CodeLens detects structures, patterns, loops, recursion, and complexity.</p></div>
+      <div class="card step"><h3>Save & Review</h3><p>Save results as Capsules and revisit them whenever needed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="screenshots">
+  <div class="container">
+    <div class="section-title">
+      <h2>📸 Screenshots</h2>
+      <p>See CodeLens in action.</p>
+    </div>
+    <div class="shots">
+      <div class="shot">
+        <h3>🖥️ Front Interface</h3>
+        <img src="images/Front.png" alt="CodeLens Front Interface">
+      </div>
+      <div class="shot">
+        <h3>🧪 Example Problem</h3>
+        <img src="images/Example%20Problem.png" alt="CodeLens Example Problem">
+      </div>
+      <div class="shot">
+        <h3>🔍 Code Analysis Interface</h3>
+        <img src="images/interface.png" alt="CodeLens Analysis Interface">
+      </div>
+      <div class="shot">
+        <h3>💾 Saved Capsules</h3>
+        <img src="images/Saved%20Capsule.png" alt="CodeLens Saved Capsules">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tech">
+  <div class="container">
+    <div class="section-title">
+      <h2>🛠️ Technology</h2>
+      <p>Built with lightweight browser technologies.</p>
+    </div>
+    <div class="tech">
+      <span class="tag">JavaScript</span>
+      <span class="tag">Python Analysis</span>
+      <span class="tag">HTML5</span>
+      <span class="tag">CSS3</span>
+      <span class="tag">Chrome Manifest V3</span>
+      <span class="tag">Chrome Side Panel</span>
+      <span class="tag">LocalStorage</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="privacy">
+      <h2>🔒 Local-First by Design</h2>
+      <p>
+        CodeLens is designed around local analysis. Your code analysis workflow
+        does not require an external code-analysis API.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>CodeLens — Code Analyzer</p>
+    <p>Built as a Chrome extension for understanding JavaScript & Python code.</p>
+  </div>
+</footer>
+
+</body>
+</html>
