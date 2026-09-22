@@ -1,9 +1,7 @@
 # CodeLens
 
 <p align="center">
-  <img src="image/codelens-banner.png"
-       alt="CodeLens - Code Analyzer"
-       width="100%">
+  <img src="image/banner.png" alt="CodeLens - Code Analyzer" width="100%">
 </p>
 
 
@@ -38,6 +36,12 @@ CodeLens is a lightweight Chrome extension that analyzes **JavaScript and Python
 * 📤 Export capsule data to JSON
 * 🗑️ Delete individual capsules or clear all saved data
 * 💻 Works locally using browser storage
+
+* <h3>🖥️ CodeLens Interface</h3>
+<p align="center">
+  <img src="image/interface.png" alt="CodeLens Interface" width="90%">
+</p>
+
 
 ## 🛠️ Tech Stack
 
@@ -104,6 +108,11 @@ Saved capsules include:
 * Source information
 * Saved date
 
+<h3>💾 Saved Capsules</h3>
+<p align="center">
+  <img src="image/saved-capsule.png" alt="Saved Capsules" width="90%">
+</p>
+
 You can search, filter, copy, delete, export, import, or generate a PDF from saved capsules.
 
 ## 📝 Exam Mode
@@ -154,6 +163,11 @@ CodeLens can be useful for:
 * Preparing for programming examinations
 * Saving and revising code-analysis results
 * Learning common programming patterns
+
+* <h3>🧪 Example Problem</h3>
+<p align="center">
+  <img src="image/example-problem.png" alt="CodeLens Example Problem" width="90%">
+</p>
 
 ## 📌 Limitations
 
