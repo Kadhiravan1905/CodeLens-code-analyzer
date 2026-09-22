@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "CodeLens",
+    "version": "1.0",
+    "description": "JavaScript and Python code analysis Chrome extension",
+    "permissions": [
+        "sidePanel"
+    ],
+    "action": {
+        "default_title": "Open CodeLens",
+        "default_popup": "popup.html"
+    },
+    "side_panel": {
+        "default_path": "sidepanel.html"
+    }
+}

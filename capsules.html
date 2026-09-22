@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeLens - Saved Capsules</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="capsules-page">
+    <div class="capsules-header">
+        <div>
+            <h1>Saved Capsules</h1>
+            <p>Your locally saved code analysis results.</p>
+        </div>
+        <div class="capsules-header-actions">
+            <!-- NEW: Import Button & Hidden File Input -->
+            <button id="importBtn" class="secondary">Import JSON</button>
+            <input type="file" id="importFile" accept=".json" style="display: none;">
+            
+            <button id="exportBtn" class="secondary">Export JSON</button>
+            <button id="backBtn" class="secondary">Back to Analyzer</button>
+            <button id="refreshBtn">Refresh</button>
+            <button id="clearAllBtn" class="danger">Clear All</button>
+        </div>
+    </div>
+
+    <div class="capsule-toolbar">
+        <input id="searchInput" type="search" placeholder="Search capsules by code, explanation or complexity...">
+        
+        <!-- NEW: Language Filter Dropdown -->
+        <select id="languageFilter" style="padding: 10px; border: 1px solid #1c4bc4; border-radius: 6px; background: #0A0E29; color: #FFFFFF; cursor: pointer; outline: none; min-width: 130px;">
+            <option value="all">All Languages</option>
+            <option value="python">Python</option>
+            <option value="javascript">JavaScript</option>
+        </select>
+        
+        <!-- Existing Exam Mode Toggle -->
+        <label style="display: flex; align-items: center; gap: 8px; background: #0A0E29; border: 1px solid #1c4bc4; padding: 10px; border-radius: 6px; cursor: pointer;">
+            <input type="checkbox" id="examModeCheckbox" style="cursor: pointer; accent-color: #2864F0;">
+            <strong style="color: #FFFFFF;">Exam Mode</strong>
+        </label>
+        
+        <span id="capsuleCount">0 capsules</span>
+    </div>
+
+    <div id="emptyState" class="empty-state hidden">
+        <h2>No Saved Capsules</h2>
+        <p>Analyze some JavaScript or Python code and click <strong>Save Capsule</strong> to store it here.</p>
+        <button id="openAnalyzerBtn">Open Analyzer</button>
+    </div>
+
+    <div id="capsuleList" class="capsule-list"></div>
+
+    <script src="capsules.js"></script>
+    <script src="capsules-view.js"></script>
+</body>
+</html>

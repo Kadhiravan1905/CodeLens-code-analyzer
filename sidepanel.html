@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CodeLens</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div>
+            <h1>CodeLens</h1>
+            <p>Code Analyzer</p>
+        </div>
+        <div style="display: flex; gap: 8px;">
+            <!-- Just the Refresh Button now -->
+            <button id="mainRefreshBtn" class="secondary"
+                style="margin-top: 5px; padding: 6px 12px; font-size: 12px;">Refresh</button>
+        </div>
+    </div>
+
+    <!-- NEW: Language Selector -->
+    <div style="margin-bottom: 10px;">
+        <label for="languageSelect"><strong>Select Language:</strong></label>
+        <select id="languageSelect" style="padding: 5px; margin-left: 8px; border-radius: 4px;">
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+        </select>
+    </div>
+
+    <!-- UPDATE: Placeholder text -->
+    <textarea id="codeInput" placeholder="Paste your JavaScript or Python code here..."></textarea>
+
+    <div class="button-row">
+        <button id="analyzeBtn">Analyze Code</button>
+        <button id="saveBtn">Save Capsule</button>
+        <button id="viewCapsulesBtn">View Saved Capsules</button>
+    </div>
+
+    <div id="result" class="hidden">
+        <h2>Analysis Result</h2>
+
+        <div class="section">
+            <div class="analysis-item"><strong>Language:</strong> <span id="language">-</span></div>
+            <div class="analysis-item"><strong>Functions:</strong> <span id="functions">0</span></div>
+            <div class="analysis-item"><strong>If Statements:</strong> <span id="ifStatements">0</span></div>
+            <div class="analysis-item"><strong>For Loops:</strong> <span id="forLoops">0</span></div>
+            <div class="analysis-item"><strong>While Loops:</strong> <span id="whileLoops">0</span></div>
+            <div class="analysis-item"><strong>Nested Loops:</strong> <span id="nestedLoops">0</span></div>
+            <div class="analysis-item"><strong>Recursion:</strong> <span id="recursion">No</span></div>
+        </div>
+
+        <div class="section">
+            <div class="complexity"><strong>Time Complexity:</strong> <span id="timeComplexity">-</span></div>
+            <div class="complexity"><strong>Space Complexity:</strong> <span id="spaceComplexity">-</span></div>
+        </div>
+
+        <div class="section">
+            <strong>Pattern:</strong>
+            <div id="patterns" class="tag-list">None</div>
+        </div>
+
+        <div class="section">
+            <strong>Explanation:</strong>
+            <p id="explanation">-</p>
+        </div>
+
+        <div class="action-row">
+            <button id="whyBtn" class="secondary">Why?</button>
+            <button id="simplifyBtn" class="secondary">Simplify</button>
+            <button id="issuesBtn" class="secondary">Possible Issues</button>
+        </div>
+
+        <div id="extraResult" class="extra-result hidden"></div>
+    </div>
+
+    <script src="analyzer.js"></script>
+    <script src="capsules.js"></script>
+    <script src="sidepanel.js"></script>
+</body>
+
+</html>

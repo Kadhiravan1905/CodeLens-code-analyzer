@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Capsule Test</title>
+</head>
+
+<body>
+
+    <h1>CodeLens Capsule Test</h1>
+
+    <button onclick="testSave()">Save Test Capsule</button>
+    <button onclick="showCapsules()">View Capsules</button>
+
+    <script src="capsules.js"></script>
+
+    <script>
+        function testSave() {
+            saveCapsule(
+                "for loop example",
+                "JavaScript",
+                "One loop detected",
+                "O(n)",
+                "Test Website"
+            );
+
+            alert("Capsule saved!");
+        }
+
+        function showCapsules() {
+            console.log(getCapsules());
+            alert("Open the browser Console to see the saved capsule.");
+        }
+    </script>
+
+</body>
+
+</html>
